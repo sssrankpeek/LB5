@@ -39,11 +39,32 @@ void main(void)
 	printf("sinus %lf gradusov raven %lf", grad, result);
 
 	double x, res1, res2, res3;
+	int A, B, C;
 	puts("\nвведите х");
 	scanf("%lf", &x);
 	res1 = scha(x);
 	res2 = schb(x);
 	res3 = schy(x);
 	printf("a=%lf, b=%lf, y=%.1lf", res1,res2,res3);
+	A = (int)res1;
+	B = (int)res2;
+	C = (int)res3;
+	printf("\n целая часть от а=%d, целая часть от b=%d, целая часть от y=%d", A, B, C);
+	if (  ( (A % 2 == 0) && (B % 2 != 0)  ) ||  ( (A % 2 != 0) && (B % 2 == 0) ) )
+	{
+		puts("\n только одно из чисел А и В четное: ISTINA");
+	}
+	else
+	{
+		puts("\n только одно из чисел А и В четное: LOJ");
+	}
+	if ((A % 3 == 0) && (B % 3 == 0) && (C % 3 == 0))
+	{
+		puts("\n каждое из чисел А,В,С кратно трем: ISTINA");
+	}
+	else 
+	{
+		puts("\n каждое из чисел А,В,С кратно трем: LOJ");
+	}
 
 }
