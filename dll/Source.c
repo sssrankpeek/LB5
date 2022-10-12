@@ -27,6 +27,13 @@ double schy(double x)
 	return y;
 }
 
+double schw(double X, double y, double z)
+{
+	double w = pow(fabs(cos(X) - cos(y)), 1 + 2 * pow(sin(y), 2)) * (1 + z + (pow(z, 2) / 2) + (pow(z, 3) / 3) + (pow(z, 4) / 4));
+	return w;
+}
+
+
 
 void main(void)
 {
@@ -38,14 +45,16 @@ void main(void)
 	result = sinrad(grad);
 	printf("sinus %lf gradusov raven %lf", grad, result);
 
-	double x, res1, res2, res3;
-	int A, B, C;
+	double X = 0.4*pow(10,4), y = -0.875, z=-0.475*pow(10,-3), PP;
+	PP = schw(X, y, z);
+	printf("\nDZ=%.4lf", PP);
+	/*int A, B, C;
 	puts("\nвведите х");
 	scanf("%lf", &x);
 	res1 = scha(x);
 	res2 = schb(x);
 	res3 = schy(x);
-	printf("a=%lf, b=%lf, y=%.1lf", res1,res2,res3);
+	/*printf("a=%lf, b=%lf, y=%.1lf", res1, res2, res3);
 	A = (int)res1;
 	B = (int)res2;
 	C = (int)res3;
@@ -65,6 +74,6 @@ void main(void)
 	else 
 	{
 		puts("\n каждое из чисел А,В,С кратно трем: LOJ");
-	}
+	}*/
 
 }
